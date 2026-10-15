@@ -1,0 +1,25 @@
+##Application de Liste de Tâches (To-Do List)
+
+Une application légère de liste de tâches développée en JavaScript vanilla, conçue selon des principes de code propre, dotée d'une architecture modulaire, d'une gestion des événements et de fonctionnalités de gestion des tâches (ajout, validation et suppression).
+
+Fonctionnalités
+
+#Ajout par Clic ou Clavier : Les utilisateurs peuvent ajouter des éléments soit en cliquant sur le bouton d'ajout, soit en appuyant sur la touche Entrée directement dans le champ de saisie.
+
+#Validation de la Saisie : Nettoie automatiquement les espaces superflus et empêche l'ajout de tâches vides.
+
+#Validation des Tâches : Permet de marquer une tâche comme complétée (effet visuel de style de texte) soit en cliquant directement sur le texte de la tâche, soit à l'aide du bouton "Validate".
+
+#Suppression des Tâches : Permet de supprimer individuellement une tâche de manière fluide grâce au bouton "supprimer".
+
+#Gestion du Focus : Replace automatiquement le focus sur le champ de saisie après l'ajout d'une tâche pour un confort d'utilisation optimal.
+
+##Architecture du Code & Séparation des Responsabilités
+
+Le projet suit une approche modulaire pour séparer clairement les responsabilités :
+
+#creerTache(taskText) : Responsable exclusivement de la fabrication de la structure HTML (<li>, <span>, boutons) et de l'association des écouteurs d'événements locaux pour chaque élément de tâche individuel.
+
+#ajouterTache() : Gère la logique métier (validation de la saisie utilisateur, appel de la fonction creerTache, insertion du nouvel élément dans la liste du DOM #AjtListe, puis réinitialisation et recentrage du champ de saisie).
+
+#Écouteurs d'Événements (Event Listeners) : Centralisent la gestion des interactions utilisateur (click sur le bouton d'ajout et keydown pour la touche Entrée).
